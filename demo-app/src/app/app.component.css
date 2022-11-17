@@ -1,0 +1,14 @@
+form {
+    text-align: center;
+    margin: 0 auto; 
+    width:250px;
+  }
+
+input.ng-valid {
+    border-top: 5px solid green;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }

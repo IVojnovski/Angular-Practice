@@ -1,4 +1,64 @@
-<app-demo2></app-demo2>
-<app-form></app-form>
-<h1>Angular</h1>
-<demo></demo>
+<h1 style="text-align: center">Registration Form</h1>
+<div ngClass="container">
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div ngClass="row mb-4">
+      <div ngClass="col">
+        <div ngClass="form-outline">
+          <label>Username:</label>
+          <input
+            type="text"
+            placeholder="Username"
+            ngClass="form-control"
+            formControlName="userName"
+          />
+          <span ngClass="error" *ngIf="userName?.invalid && userName?.touched"
+            >Username is required.</span
+          >
+        </div>
+      </div>
+      <div ngClass="col">
+        <div ngClass="form-outline">
+          <label>Password:</label>
+          <input
+            type="text"
+            placeholder="Password"
+            ngClass="form-control"
+            formControlName="password"
+          />
+          <span ngClass="error" *ngIf="password?.invalid && password?.touched"
+            >Password must be between 8-15 characters.</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="form-outline mb-4">
+      <label>Email:</label>
+      <input
+        type="email"
+        ngClass="form-control"
+        formControlName="email"
+        placeholder="example@email.com"
+      />
+      <span ngClass="error" *ngIf="email?.invalid && email?.touched"
+        >Please enter a valid email address.</span
+      >
+    </div>
+    <div class="form-outline mb-4">
+      <label>Phone:</label>
+      <input
+        type="text"
+        ngClass="form-control"
+        formControlName="phone"
+        placeholder="123-456-7890"
+      />
+      <span ngClass="error" *ngIf="phone?.invalid && phone?.touched"
+        >Enter a valid phone number.</span
+      >
+      <br />
+      <br />
+      <button type="submit" ngClass="btn btn-primary btn-block mb-4">
+        Register
+      </button>
+    </div>
+  </form>
+</div>
